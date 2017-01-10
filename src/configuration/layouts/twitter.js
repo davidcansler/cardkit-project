@@ -1,6 +1,6 @@
 module.exports = {
   card: {
-    width: 1000,
-    height: 560
+    width: 440,
+    height: 220
   }
 };
