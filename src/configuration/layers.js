@@ -31,6 +31,13 @@ module.exports = {
     fontSize: 24,
     draggable: true,
     editable: {
+      fill: {
+          options: [
+            '#00b5e7',
+            '#FFFFFF',
+            '#000000'
+          ]
+      },
       text: true,
       fontSize: {
         min: 10,
