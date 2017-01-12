@@ -21,25 +21,17 @@ module.exports = {
       }
     },
   title: {
-    name: 'Title',
+    name: 'White aileron',
     type: 'text',
     x: 30,
     y: 30,
     fontFamily: 'Aileron',
     fill: '#FFFFFF',
-    text: 'This is the default text of the title layer',
+    text: 'White aileron.',
     fontSize: 24,
-    get lineHeight() {
-      return this.fontSize * 1.2;
-    },
     draggable: true,
     editable: {
       text: true,
-      fill: {
-          'White': '#FFFFFF',
-          'Black': '#000000',
-          'Blue': '#00b5e7'
-        },
       fontSize: {
         min: 10,
         max: 100,
@@ -47,8 +39,49 @@ module.exports = {
       }
     }
   },
+  title2: {
+    name: 'Blue aileron',
+    type: 'text',
+    x: 250,
+    y: 30,
+    fontFamily: 'Aileron',
+    fill: '#00b5e7',
+    text: 'Blue aileron.',
+    fontSize: 24,
+    draggable: true,
+    editable: {
+      text: true,
+      fontSize: {
+        min: 10,
+        max: 100,
+        step: 2
+      }
+    }
+  },
+  title3: {
+    name: 'Black aileron',
+    type: 'text',
+    x: 500,
+    y: 30,
+    fontFamily: 'Aileron',
+    fill: '#000000',
+    text: 'Black aileron.',
+    fontSize: 24,
+    draggable: true,
+    editable: {
+      text: true,
+      fontSize: {
+        min: 10,
+        max: 100,
+        step: 2
+      }
+    }
+  },
+
+
+
   subtitle: { // This is an internal reference name of this, we can use it for attaching other layers to this one
-    name: 'Subtitle', // This is the display name the user will see in the UI
+    name: 'White lato', // This is the display name the user will see in the UI
     type: 'text', // We want it to be text
     x: 30, // This is the x position of this element on the image
     y: { // y is normally a number, like x, however here we're going to provide an object that connects it to our existing title layer
@@ -56,16 +89,12 @@ module.exports = {
       offset: 10, // This is a numeric value of pixels we want to offset this by on the Y axis, a higher number moves it further away from the element it is attached to
     },
     fontFamily: 'Lato',
-    fill: '#00b5e7', // The colour of this text
-    text: 'THIS IS THE DEFAULT TEXT FOR THE SUBTITLE FIELD',
+    fill: '#FFFFFF', // The colour of this text
+    text: 'WHITE LATO.',
     fontSize: 17.6, // A number representing the font size in pixels
-    get lineHeight() { // This is a JavaScript getter, and allows to compute a value based on another property of this layer
-      return this.fontSize * 1.2; // This gets the font size (18), and multiplies it by 1.2, adding 20% in size
-    },
     draggable: true,
     editable: { // This is an object of properties that should be editable
       text: true, // Makes the text value editable, this builds a text field in the UI
-      fill: 'picker',
       fontSize: {
         min: 10,
         max: 50,
@@ -73,6 +102,53 @@ module.exports = {
       }
     }
   },
+  subtitle2: { // This is an internal reference name of this, we can use it for attaching other layers to this one
+    name: 'Blue lato', // This is the display name the user will see in the UI
+    type: 'text', // We want it to be text
+    x: 250, // This is the x position of this element on the image
+    y: { // y is normally a number, like x, however here we're going to provide an object that connects it to our existing title layer
+      attach: 'title', // 'title' is the name of the layer we already have in our configuration object
+      offset: 10, // This is a numeric value of pixels we want to offset this by on the Y axis, a higher number moves it further away from the element it is attached to
+    },
+    fontFamily: 'Lato',
+    fill: '#00b5e7', // The colour of this text
+    text: 'BLUE LATO.',
+    fontSize: 17.6, // A number representing the font size in pixels
+    draggable: true,
+    editable: { // This is an object of properties that should be editable
+      text: true, // Makes the text value editable, this builds a text field in the UI
+      fontSize: {
+        min: 10,
+        max: 50,
+        step: 2
+      }
+    }
+  },
+
+  subtitle3: { // This is an internal reference name of this, we can use it for attaching other layers to this one
+    name: 'Black lato', // This is the display name the user will see in the UI
+    type: 'text', // We want it to be text
+    x: 500, // This is the x position of this element on the image
+    y: { // y is normally a number, like x, however here we're going to provide an object that connects it to our existing title layer
+      attach: 'title', // 'title' is the name of the layer we already have in our configuration object
+      offset: 10, // This is a numeric value of pixels we want to offset this by on the Y axis, a higher number moves it further away from the element it is attached to
+    },
+    fontFamily: 'Lato',
+    fill: '#000000', // The colour of this text
+    text: 'BLACK LATO',
+    fontSize: 17.6, // A number representing the font size in pixels
+    draggable: true,
+    editable: { // This is an object of properties that should be editable
+      text: true, // Makes the text value editable, this builds a text field in the UI
+      fontSize: {
+        min: 10,
+        max: 50,
+        step: 2
+      }
+    }
+  },
+
+
 image: {
   name: 'Image',
   type: 'image', // We'll choose type 'image' here, that handles rendering an inline image
