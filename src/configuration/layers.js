@@ -20,6 +20,32 @@ module.exports = {
         }
       }
     },
+
+image: {
+  name: 'Image',
+  type: 'image', // We'll choose type 'image' here, that handles rendering an inline image
+  x: 500,
+  y: 30,
+  width: 100, // A pixel width for the image to render at
+  get height() { // Here we use a JavaScript getter that returns the value of height, without this our resize logic (that we'll add shortly won't work)
+    return this.width;
+  },
+  src: '', // There is no default value, so we'll provide an empty string
+  preserveAspectRatio: 'xMinYMin', // This an SVG specific property that ensures our image uniformly scales, search the property name to find other possible values
+  draggable: true, // Setting draggable to true means the user can drag this layer around our image
+  editable: {
+    src: true, // We want the source to be editable, this will create a file uploader
+    width: { // We want it to be resizable, so set width to be editable (remember height is dynamically the same value as width). We provide an object that specifies the minimum and maximum values, along with a step count
+      min: 50,
+      max: 1000,
+      step: 10
+    }
+  }
+},
+
+
+
+
 logo: {
   name: 'Logo',
   type: 'image', // We'll choose type 'image' here, that handles rendering an inline image
@@ -58,7 +84,7 @@ logo: {
     y: 30,
     fontFamily: 'Aileron',
     fill: '#FFFFFF',
-    text: 'Aileron.',
+    text: '',
     fontSize: 24,
     draggable: true,
     editable: {
@@ -84,7 +110,7 @@ logo: {
     y: 30,
     fontFamily: 'Aileron',
     fill: '#00b5e7',
-    text: 'Aileron.',
+    text: '',
     fontSize: 24,
     draggable: true,
     editable: {
@@ -111,7 +137,7 @@ logo: {
     y: 30,
     fontFamily: 'Aileron',
     fill: '#000000',
-    text: 'Aileron.',
+    text: '',
     fontSize: 24,
     draggable: true,
     editable: {
@@ -174,7 +200,7 @@ logo: {
     },
     fontFamily: 'Lato',
     fill: '#00b5e7', // The colour of this text
-    text: 'LATO.',
+    text: '',
     fontSize: 17.6, // A number representing the font size in pixels
     draggable: true,
     editable: { // This is an object of properties that should be editable
@@ -205,7 +231,7 @@ logo: {
     },
     fontFamily: 'Lato',
     fill: '#000000', // The colour of this text
-    text: 'LATO.',
+    text: '',
     fontSize: 17.6, // A number representing the font size in pixels
     draggable: true,
     editable: { // This is an object of properties that should be editable
@@ -227,27 +253,6 @@ logo: {
   },
 
 
-image: {
-  name: 'Image',
-  type: 'image', // We'll choose type 'image' here, that handles rendering an inline image
-  x: 500,
-  y: 30,
-  width: 100, // A pixel width for the image to render at
-  get height() { // Here we use a JavaScript getter that returns the value of height, without this our resize logic (that we'll add shortly won't work)
-    return this.width;
-  },
-  src: '', // There is no default value, so we'll provide an empty string
-  preserveAspectRatio: 'xMinYMin', // This an SVG specific property that ensures our image uniformly scales, search the property name to find other possible values
-  draggable: true, // Setting draggable to true means the user can drag this layer around our image
-  editable: {
-    src: true, // We want the source to be editable, this will create a file uploader
-    width: { // We want it to be resizable, so set width to be editable (remember height is dynamically the same value as width). We provide an object that specifies the minimum and maximum values, along with a step count
-      min: 50,
-      max: 1000,
-      step: 10
-    }
-  }
-},
 
 
 
