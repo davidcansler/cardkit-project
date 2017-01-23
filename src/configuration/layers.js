@@ -37,7 +37,7 @@ image: {
     src: true, // We want the source to be editable, this will create a file uploader
     width: { // We want it to be resizable, so set width to be editable (remember height is dynamically the same value as width). We provide an object that specifies the minimum and maximum values, along with a step count
       min: 50,
-      max: 1000,
+      max: 1500,
       step: 10
     }
   }
