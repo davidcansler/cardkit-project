@@ -44,6 +44,34 @@ module.exports = {
   },
 
 
+  image2: {
+    name: 'Image 2',
+    type: 'image', // We'll choose type 'image' here, that handles rendering an inline image
+    x: 500,
+    y: 30,
+    width: 100, // A pixel width for the image to render at
+    get height() { // Here we use a JavaScript getter that returns the value of height, without this our resize logic (that we'll add shortly won't work)
+      return this.width;
+    },
+    src: '', // There is no default value, so we'll provide an empty string
+    preserveAspectRatio: 'xMinYMin', // This an SVG specific property that ensures our image uniformly scales, search the property name to find other possible values
+    draggable: true, // Setting draggable to true means the user can drag this layer around our image
+    editable: {
+      src: true, // We want the source to be editable, this will create a file uploader
+      width: { // We want it to be resizable, so set width to be editable (remember height is dynamically the same value as width). We provide an object that specifies the minimum and maximum values, along with a step count
+        min: 50,
+        max: 1500,
+        step: 10
+      },
+      opacity: {
+        min: 0.1,
+        max: 1.0,
+        step: .1
+      }
+    }
+  },
+
+
 
 
   logo: {
