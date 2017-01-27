@@ -1,7 +1,7 @@
 module.exports = {
   'Dark': {
     card: {
-      fill: '#333333'
+      fill: '#000000'
     },
     layers: {
       title: {
