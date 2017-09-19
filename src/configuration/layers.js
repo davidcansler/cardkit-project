@@ -203,7 +203,7 @@ module.exports = {
     },
     fontFamily: 'Lato',
     fill: '#FFFFFF', // The colour of this text
-    text: 'LATO.',
+    text: '',
     fontSize: 17.6, // A number representing the font size in pixels
     draggable: true,
     editable: { // This is an object of properties that should be editable

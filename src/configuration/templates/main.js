@@ -1,4 +1,6 @@
 module.exports = {
+  'Blank canvas': {
+  },
   'Left photo quote': {
     layers: {
       title: {
